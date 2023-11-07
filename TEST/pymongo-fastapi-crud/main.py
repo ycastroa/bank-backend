@@ -3,6 +3,9 @@ from dotenv import dotenv_values
 from pymongo import MongoClient
 from contextlib import asynccontextmanager
 
+#take values from .env file for config var
+config = dotenv_values(".env")
+
 app = FastAPI()
 
 @app.get("/")
