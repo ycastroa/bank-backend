@@ -18,6 +18,7 @@ async def lifespan(app: FastAPI):
     #shutdown
     app.mongodb_client.close()
 
+#trivial print at 127.0.0.1:8000 when server is run (FOR TESTING)
 @app.get("/")
 async def root():
     return {"message": "Welcome to the PyMongo tutorial!"}
