@@ -21,3 +21,19 @@ class Book(BaseModel):
                 "synopsis": "..."
             }
         }
+
+#model for optional updates of a Book entry
+#fields are optional to allow for partial field updates
+class BookUpdate(BaseModel):
+    title: Optional[str]
+    author: Optional[str]
+    synopsis: Optional[str]
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "title": "Don Quixote",
+                "author": "Miguel de Cervantes",
+                "synopsis": "Don Quixote is a Spanish novel by Miguel de Cervantes..."
+            }
+        }
